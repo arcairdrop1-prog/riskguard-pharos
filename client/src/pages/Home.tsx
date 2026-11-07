@@ -60,69 +60,69 @@ const results: Record<Result["id"], Result> = {
   clean: {
     id: "clean",
     address: demoAddresses.clean,
-    kind: "Carteira",
+    kind: "Wallet",
     network: "Pharos Testnet",
     risk: "baixo",
     score: 12,
-    verdict: "Poucos sinais de atenção",
-    summary: "Esta carteira tem um histórico consistente até aqui. Ainda assim, revise o valor e a permissão antes de assinar.",
-    recommendationTitle: "Pode prosseguir",
-    recommendation: "Não encontramos alertas críticos no histórico analisado. Confirme apenas se o site e o valor da transação são os esperados.",
-    recommendationAction: "Prosseguir com revisão final",
+    verdict: "Few signals require attention",
+    summary: "This wallet has a consistent history so far. Still, review the amount and permission before signing.",
+    recommendationTitle: "You can proceed",
+    recommendation: "We found no critical alerts in the analyzed history. Just confirm the site and transaction amount are what you expect.",
+    recommendationAction: "Proceed with final review",
     signals: [
-      { label: "Idade do endereço", value: "214 dias", explanation: "O endereço já existe há tempo suficiente para termos contexto de comportamento.", evidence: "Primeira atividade há 214 dias", status: "clear", icon: Clock3 },
-      { label: "Código verificado", value: "Verificado", explanation: "O código publicado pode ser comparado com o código que roda na rede.", evidence: "Verificação encontrada no explorador", status: "clear", icon: Code2 },
-      { label: "Endereços sinalizados", value: "Nenhum", explanation: "Não vimos interação recente com endereços marcados por golpes ou sanções.", evidence: "0 correspondências em 2.408 interações", status: "clear", icon: Fingerprint },
-      { label: "Padrão de aprovação", value: "Normal", explanation: "As permissões observadas estão dentro do comportamento esperado para este tipo de contrato.", evidence: "Sem aprovação ilimitada recente", status: "clear", icon: LockKeyhole },
-      { label: "Movimentação recente", value: "Estável", explanation: "O fluxo de fundos não mostrou picos atípicos antes da consulta.", evidence: "Volume 7d dentro da faixa histórica", status: "clear", icon: Radar },
+      { label: "Address age", value: "214 dias", explanation: "This address has existed long enough to provide useful behavior context.", evidence: "First activity 214 days ago", status: "clear", icon: Clock3 },
+      { label: "Verified code", value: "Verificado", explanation: "The published code can be compared with the code running on the network.", evidence: "Verification found in explorer", status: "clear", icon: Code2 },
+      { label: "Flagged addresses", value: "None", explanation: "No recent interaction with addresses flagged for scams or sanctions.", evidence: "0 matches across 2,408 interactions", status: "clear", icon: Fingerprint },
+      { label: "Approval pattern", value: "Normal", explanation: "Observed permissions are within the expected behavior for this contract type.", evidence: "No recent unlimited approval", status: "clear", icon: LockKeyhole },
+      { label: "Recent activity", value: "Estável", explanation: "Fund flows showed no unusual spikes before this scan.", evidence: "7-day volume within historical range", status: "clear", icon: Radar },
     ],
   },
   risky: {
     id: "risky",
     address: demoAddresses.risky,
-    kind: "Contrato",
+    kind: "Contract",
     network: "Pharos Testnet",
     risk: "alto",
     score: 86,
-    verdict: "Interação não recomendada",
-    summary: "Encontramos sinais combinados de risco. A origem e as permissões deste contrato precisam ser verificadas por outro canal.",
-    recommendationTitle: "Evite assinar por enquanto",
-    recommendation: "O conjunto de alertas é compatível com contratos recém-criados ou maliciosos. Não conecte sua carteira nem conceda aprovação até investigar a origem.",
-    recommendationAction: "Evitar esta interação",
+    verdict: "Interaction not recommended",
+    summary: "We found combined risk signals. Verify this contract’s origin and permissions through another channel.",
+    recommendationTitle: "Avoid signing for now",
+    recommendation: "This alert pattern is consistent with newly created or malicious contracts. Do not connect your wallet or grant approval until you investigate the source.",
+    recommendationAction: "Avoid this interaction",
     signals: [
-      { label: "Idade do contrato", value: "3 dias", explanation: "Contratos muito novos ainda não têm histórico suficiente para criar confiança.", evidence: "Primeira atividade há 3 dias", status: "danger", icon: Clock3 },
-      { label: "Código verificado", value: "Não verificado", explanation: "Sem o código publicado, não dá para conferir com clareza o que a transação executa.", evidence: "Nenhum código-fonte verificado", status: "danger", icon: Code2 },
-      { label: "Endereços sinalizados", value: "2 encontrados", explanation: "O contrato se relacionou com endereços que aparecem em listas de atenção.", evidence: "2 correspondências em 184 interações", status: "danger", icon: Fingerprint },
-      { label: "Padrão de aprovação", value: "Incomum", explanation: "Foi detectada uma solicitação de aprovação ampla e recente, que pode permitir gastos futuros.", evidence: "Aprovação ilimitada há 18 min", status: "danger", icon: LockKeyhole },
-      { label: "Movimentação recente", value: "Pico atípico", explanation: "O volume cresceu muito em pouco tempo, sem histórico que explique o salto.", evidence: "+920% de volume nas últimas 24h", status: "attention", icon: Radar },
+      { label: "Contract age", value: "3 days", explanation: "Very new contracts do not yet have enough history to build trust.", evidence: "First activity 3 days ago", status: "danger", icon: Clock3 },
+      { label: "Verified code", value: "Not verified", explanation: "Without published code, it is difficult to verify what the transaction executes.", evidence: "No verified source code", status: "danger", icon: Code2 },
+      { label: "Flagged addresses", value: "2 found", explanation: "This contract interacted with addresses that appear on watchlists.", evidence: "2 matches across 184 interactions", status: "danger", icon: Fingerprint },
+      { label: "Approval pattern", value: "Unusual", explanation: "A recent broad approval request was detected and may allow future spending.", evidence: "Unlimited approval 18 min ago", status: "danger", icon: LockKeyhole },
+      { label: "Recent activity", value: "Unusual spike", explanation: "Volume rose sharply in a short time with no history to explain the jump.", evidence: "+920% volume in the last 24h", status: "attention", icon: Radar },
     ],
   },
   mixed: {
     id: "mixed",
     address: "0x9c8F...D102",
-    kind: "Carteira",
+    kind: "Wallet",
     network: "Pharos Testnet",
     risk: "médio",
     score: 48,
-    verdict: "Revise com cautela",
-    summary: "Há contexto suficiente para investigar, mas dois sinais merecem atenção antes de qualquer assinatura.",
-    recommendationTitle: "Faça uma revisão extra",
-    recommendation: "Confira a origem do contrato, reduza permissões quando possível e faça um teste com valor baixo antes de continuar.",
-    recommendationAction: "Revisar antes de assinar",
+    verdict: "Review with caution",
+    summary: "There is enough context to investigate, but two signals deserve attention before signing.",
+    recommendationTitle: "Do an extra review",
+    recommendation: "Check the contract source, reduce permissions where possible, and test with a small amount before continuing.",
+    recommendationAction: "Review before signing",
     signals: [
-      { label: "Idade do endereço", value: "26 dias", explanation: "O histórico ainda é curto para uma conclusão definitiva.", evidence: "Primeira atividade há 26 dias", status: "attention", icon: Clock3 },
-      { label: "Código verificado", value: "Verificado", explanation: "O código pode ser comparado, mas isso não elimina todos os riscos.", evidence: "Verificação encontrada no explorador", status: "clear", icon: Code2 },
-      { label: "Endereços sinalizados", value: "Nenhum", explanation: "Não há correspondências conhecidas nesta amostra.", evidence: "0 correspondências em 614 interações", status: "clear", icon: Fingerprint },
-      { label: "Padrão de aprovação", value: "Revisar", explanation: "Uma permissão acima do padrão foi vista recentemente.", evidence: "Aprovação alta há 4h", status: "attention", icon: LockKeyhole },
-      { label: "Movimentação recente", value: "Moderada", explanation: "O fluxo está acima da média, mas ainda não é conclusivo.", evidence: "+180% de volume nas últimas 24h", status: "attention", icon: Radar },
+      { label: "Address age", value: "26 dias", explanation: "The history is still too short for a definitive conclusion.", evidence: "First activity 26 days ago", status: "attention", icon: Clock3 },
+      { label: "Verified code", value: "Verificado", explanation: "The code can be compared, but that does not eliminate every risk.", evidence: "Verification found in explorer", status: "clear", icon: Code2 },
+      { label: "Flagged addresses", value: "None", explanation: "There are no known matches in this sample.", evidence: "0 matches across 614 interactions", status: "clear", icon: Fingerprint },
+      { label: "Approval pattern", value: "Review", explanation: "A higher-than-usual permission was seen recently.", evidence: "High approval 4h ago", status: "attention", icon: LockKeyhole },
+      { label: "Recent activity", value: "Moderada", explanation: "Activity is above average, but not yet conclusive.", evidence: "+180% volume in the last 24h", status: "attention", icon: Radar },
     ],
   },
 };
 
 const statusCopy: Record<SignalStatus, { label: string; className: string }> = {
   clear: { label: "OK", className: "signal-clear" },
-  attention: { label: "ATENÇÃO", className: "signal-attention" },
-  danger: { label: "ALERTA", className: "signal-danger" },
+  attention: { label: "ATTENTION", className: "signal-attention" },
+  danger: { label: "ALERT", className: "signal-danger" },
 };
 
 function shortenAddress(address: string) {
@@ -138,7 +138,7 @@ function getResultForAddress(address: string): Result {
 }
 
 function RiskPill({ risk }: { risk: RiskLevel }) {
-  return <span className={`risk-pill risk-${risk}`}>{risk === "baixo" ? "BAIXO" : risk === "médio" ? "MÉDIO" : "ALTO"}</span>;
+  return <span className={`risk-pill risk-${risk}`}>{risk === "baixo" ? "LOW" : risk === "médio" ? "MEDIUM" : "HIGH"}</span>;
 }
 
 function RiskScore({ result }: { result: Result }) {
@@ -152,7 +152,7 @@ function RiskScore({ result }: { result: Result }) {
         </div>
       </div>
       <div>
-        <p className="eyebrow">NÍVEL DE RISCO</p>
+        <p className="eyebrow">RISK LEVEL</p>
         <div className="score-title"><RiskPill risk={result.risk} /></div>
         <p className="score-verdict">{result.verdict}</p>
       </div>
@@ -196,14 +196,14 @@ export default function Home() {
 
   const runScan = (nextAddress = address) => {
     if (!nextAddress.trim()) {
-      toast.error("Cole uma carteira ou contrato para começar.");
+      toast.error("Paste a wallet or contract to begin.");
       return;
     }
     setChecking(true);
     setTimeout(() => {
       setResult({ ...getResultForAddress(nextAddress), network });
       setChecking(false);
-      toast.success("Análise concluída", { description: "Os sinais da demonstração foram atualizados." });
+      toast.success("Scan complete", { description: "Demo signals have been updated." });
     }, 720);
   };
 
@@ -214,16 +214,17 @@ export default function Home() {
   };
 
   const copyReport = async () => {
-    const report = `RiskGuard — relatório de demonstração\nEndereço: ${result.address}\nRede: ${result.network}\nRisco: ${result.risk.toUpperCase()} (${result.score}/100)\nVeredito: ${result.verdict}\nRecomendação: ${result.recommendation}\nSinais de atenção: ${signalCount} de 5`;
+    const reportRisk = result.risk === "baixo" ? "LOW" : result.risk === "médio" ? "MEDIUM" : "HIGH";
+    const report = `RiskGuard — demo report\nAddress: ${result.address}\nNetwork: ${result.network}\nRisk: ${reportRisk} (${result.score}/100)\nVerdict: ${result.verdict}\nRecommendation: ${result.recommendation}\nSignals requiring attention: ${signalCount} of 5`;
     const evidence = result.signals.map((signal) => `- ${signal.label}: ${signal.value} — ${signal.evidence}. ${signal.explanation}`).join("\n");
     const completeReport = `${report}\n\nEvidências:\n${evidence}`;
     try {
       await navigator.clipboard.writeText(completeReport);
       setCopied(true);
-      toast.success("Relatório copiado", { description: "Cole o resumo onde quiser compartilhar." });
+      toast.success("Relatório copied", { description: "Paste the summary wherever you want to share it." });
       setTimeout(() => setCopied(false), 2200);
     } catch {
-      toast.error("Não foi possível copiar automaticamente", { description: "Selecione e copie o resumo manualmente." });
+      toast.error("Could not copy automatically", { description: "Select and copy the summary manually." });
     }
   };
 
@@ -236,92 +237,92 @@ export default function Home() {
           <span className="brand-beta">BETA</span>
         </a>
         <nav className="topnav" aria-label="Navegação principal">
-          <a href="#como-funciona">Como funciona</a>
-          <a href="#sinais">Os 5 sinais</a>
-          <span className="network-status"><span className="live-dot"></span> sistema online</span>
+          <a href="#como-funciona">How it works</a>
+          <a href="#signals">The 5 signals</a>
+          <span className="network-status"><span className="live-dot"></span> system online</span>
         </nav>
       </header>
 
       <main id="top">
         <section className="hero container">
           <div className="hero-copy">
-            <div className="kicker"><span className="kicker-line"></span> FILTRO DE SEGURANÇA PRÉ-TRANSAÇÃO</div>
-            <h1>Veja os sinais<br /><em>antes de assinar.</em></h1>
-            <p className="hero-lede">O RiskGuard lê o histórico de uma carteira ou contrato e traduz os sinais on-chain em uma decisão simples: prosseguir, revisar ou evitar.</p>
+            <div className="kicker"><span className="kicker-line"></span> PRE-TRANSACTION SAFETY FILTER</div>
+            <h1>See the signals<br /><em>before you sign.</em></h1>
+            <p className="hero-lede">RiskGuard reads a wallet or contract history and turns on-chain signals into a simple decision: proceed, review, or avoid.</p>
             <div className="hero-proof">
-              <div><strong>05</strong><span>sinais<br />analisados</span></div>
-              <div><strong>03</strong><span>níveis de<br />risco</span></div>
-              <div><strong>01</strong><span>decisão<br />mais segura</span></div>
+              <div><strong>05</strong><span>signals<br />analyzed</span></div>
+              <div><strong>03</strong><span>risk<br />levels</span></div>
+              <div><strong>01</strong><span>safer<br />decision</span></div>
             </div>
-            <div className="hero-note"><Sparkles size={15} /> Dados de demonstração para explorar o produto sem conectar sua carteira.</div>
+            <div className="hero-note"><Sparkles size={15} /> Demo data to explore the product without connecting your wallet.</div>
           </div>
 
           <div className="scanner-wrap">
-            <div className="scanner-rail">PRÉ<br />TRANS<br />AÇÃO</div>
+            <div className="scanner-rail">PRE<br />TRANS<br />ACTION</div>
             <div className="scanner-card">
-              <div className="scanner-topline"><div><span className="tiny-dot"></span> SCANNER 01</div><span className="scanner-time">última atualização agora</span></div>
+              <div className="scanner-topline"><div><span className="tiny-dot"></span> SCANNER 01</div><span className="scanner-time">last updated now</span></div>
               <div className="scanner-title-row">
-                <div><p className="eyebrow">CONSULTAR ENDEREÇO</p><h2>Qual carteira você quer conferir?</h2></div>
+                <div><p className="eyebrow">LOOK UP ADDRESS</p><h2>Which wallet do you want to check?</h2></div>
                 <div className="scan-icon"><Radar size={22} /></div>
               </div>
-              <label className="field-label" htmlFor="wallet-address">Carteira ou contrato</label>
+              <label className="field-label" htmlFor="wallet-address">Wallet or contract</label>
               <div className="address-input-wrap">
                 <WalletCards size={17} />
                 <input id="wallet-address" value={address} onChange={(event) => setAddress(event.target.value)} onKeyDown={(event) => event.key === "Enter" && runScan()} placeholder="0x..." spellCheck={false} />
-                {address && <button className="clear-input" onClick={() => setAddress("")} aria-label="Limpar endereço"><X size={15} /></button>}
+                {address && <button className="clear-input" onClick={() => setAddress("")} aria-label="Clear address"><X size={15} /></button>}
               </div>
               <div className="field-row">
-                <div className="select-wrap"><span className="field-label">Rede</span><select value={network} onChange={(event) => setNetwork(event.target.value)}><option>Pharos Testnet</option><option>Ethereum</option><option>Base</option></select></div>
-                <div className="address-type"><span className="field-label">Tipo detectado</span><strong>{result.kind}</strong></div>
+                <div className="select-wrap"><span className="field-label">Network</span><select value={network} onChange={(event) => setNetwork(event.target.value)}><option>Pharos Testnet</option><option>Ethereum</option><option>Base</option></select></div>
+                <div className="address-type"><span className="field-label">Detected type</span><strong>{result.kind}</strong></div>
               </div>
               <button className="scan-button" onClick={() => runScan()} disabled={checking}>
-                {checking ? <><Loader2 size={17} className="spin" /> lendo histórico...</> : <><Radar size={17} /> verificar agora <ArrowUpRight size={16} /></>}
+                {checking ? <><Loader2 size={17} className="spin" /> reading history...</> : <><Radar size={17} /> check now <ArrowUpRight size={16} /></>}
               </button>
-              <div className="scanner-lock"><LockKeyhole size={13} /> somente leitura · nenhuma transação será assinada</div>
+              <div className="scanner-lock"><LockKeyhole size={13} /> read-only · no transaction will be signed</div>
             </div>
           </div>
         </section>
 
-        <section className="demo-strip container" aria-label="Exemplos de demonstração">
-          <div className="demo-intro"><span className="eyebrow">COMECE POR UM EXEMPLO</span><p>Veja como o mesmo filtro reage a históricos diferentes.</p></div>
+        <section className="demo-strip container" aria-label="Demo examples">
+          <div className="demo-intro"><span className="eyebrow">START WITH AN EXAMPLE</span><p>See how the same filter reacts to different histories.</p></div>
           <button className={`demo-card ${selectedDemo === "clean" ? "active" : ""}`} onClick={() => loadDemo("clean")}>
-            <span className="demo-icon demo-safe"><ShieldCheck size={18} /></span><span><small>EXEMPLO 01 · LIMPO</small><strong>Carteira consistente</strong><em>{shortenAddress(demoAddresses.clean)}</em></span><RiskPill risk="baixo" /><ArrowUpRight size={16} />
+            <span className="demo-icon demo-safe"><ShieldCheck size={18} /></span><span><small>EXAMPLE 01 · CLEAN</small><strong>Consistent wallet</strong><em>{shortenAddress(demoAddresses.clean)}</em></span><RiskPill risk="baixo" /><ArrowUpRight size={16} />
           </button>
           <button className={`demo-card ${selectedDemo === "risky" ? "active" : ""}`} onClick={() => loadDemo("risky")}>
-            <span className="demo-icon demo-danger"><ShieldAlert size={18} /></span><span><small>EXEMPLO 02 · ATENÇÃO</small><strong>Contrato suspeito</strong><em>{shortenAddress(demoAddresses.risky)}</em></span><RiskPill risk="alto" /><ArrowUpRight size={16} />
+            <span className="demo-icon demo-danger"><ShieldAlert size={18} /></span><span><small>EXAMPLE 02 · WATCH</small><strong>Suspicious contract</strong><em>{shortenAddress(demoAddresses.risky)}</em></span><RiskPill risk="alto" /><ArrowUpRight size={16} />
           </button>
         </section>
 
         <section className="results-section container" id="como-funciona">
           <div className="section-heading">
-            <div><span className="eyebrow">RESULTADO DA LEITURA</span><h2>Contexto para decidir melhor.</h2></div>
-            <div className="heading-actions"><span className="demo-badge"><span></span> análise de demonstração</span><button className="share-button" onClick={copyReport}>{copied ? <ClipboardCheck size={16} /> : <Copy size={16} />}{copied ? "copiado" : "copiar relatório"}</button></div>
+            <div><span className="eyebrow">SCAN RESULT</span><h2>Context to make a better decision.</h2></div>
+            <div className="heading-actions"><span className="demo-badge"><span></span> demo analysis</span><button className="share-button" onClick={copyReport}>{copied ? <ClipboardCheck size={16} /> : <Copy size={16} />}{copied ? "copied" : "copy report"}</button></div>
           </div>
 
           <div className="result-overview">
             <RiskScore result={result} />
-            <div className="overview-detail"><div className="overview-address"><div className="address-token"><WalletCards size={18} /></div><div><span className="eyebrow">{result.kind.toUpperCase()} · {result.network.toUpperCase()}</span><strong>{shortenAddress(result.address)}</strong></div><button className="icon-button" aria-label="Copiar endereço" onClick={() => navigator.clipboard?.writeText(result.address)}><Clipboard size={15} /></button></div><p>{result.summary}</p><div className="overview-meta"><span><CheckCircle2 size={15} /> leitura concluída em 0,7s</span><span><Info size={15} /> resultado não assina transações</span></div></div>
-            <div className={`signal-count signal-count-${result.risk}`}><span className="eyebrow">SINAIS DE ATENÇÃO</span><strong>{signalCount}<small>/05</small></strong><span>{signalCount === 0 ? "nenhum alerta crítico" : signalCount === 1 ? "ponto para revisar" : "pontos para revisar"}</span></div>
+            <div className="overview-detail"><div className="overview-address"><div className="address-token"><WalletCards size={18} /></div><div><span className="eyebrow">{result.kind.toUpperCase()} · {result.network.toUpperCase()}</span><strong>{shortenAddress(result.address)}</strong></div><button className="icon-button" aria-label="Copy address" onClick={() => navigator.clipboard?.writeText(result.address)}><Clipboard size={15} /></button></div><p>{result.summary}</p><div className="overview-meta"><span><CheckCircle2 size={15} /> scan completed in 0.7s</span><span><Info size={15} /> result does not sign transactions</span></div></div>
+            <div className={`signal-count signal-count-${result.risk}`}><span className="eyebrow">SINAIS DE ATTENTION</span><strong>{signalCount}<small>/05</small></strong><span>{signalCount === 0 ? "no critical alerts" : signalCount === 1 ? "point to review" : "points to review"}</span></div>
           </div>
 
-          <div className="signals-head" id="sinais"><div><span className="eyebrow">EVIDÊNCIAS DO HISTÓRICO</span><h3>O que encontramos</h3></div><span className="signals-caption">Cada bandeira vem com o motivo em linguagem simples.</span></div>
+          <div className="signals-head" id="signals"><div><span className="eyebrow">HISTORY EVIDENCE</span><h3>What we found</h3></div><span className="signals-caption">Every flag comes with a plain-language reason.</span></div>
           <div className="signals-grid">{result.signals.map((signal) => <SignalCard key={signal.label} signal={signal} />)}</div>
 
           <div className={`recommendation recommendation-${result.risk}`}>
             <div className="recommendation-mark">{result.risk === "alto" ? <ShieldAlert size={24} /> : result.risk === "médio" ? <TriangleAlert size={24} /> : <ShieldCheck size={24} />}</div>
-            <div className="recommendation-copy"><span className="eyebrow">RECOMENDAÇÃO DO RISKGUARD</span><h3>{result.recommendationTitle}</h3><p>{result.recommendation}</p></div>
+            <div className="recommendation-copy"><span className="eyebrow">RISKGUARD RECOMMENDATION</span><h3>{result.recommendationTitle}</h3><p>{result.recommendation}</p></div>
             <button className="recommendation-action" onClick={copyReport}>{result.recommendationAction}<ArrowUpRight size={16} /></button>
           </div>
         </section>
 
         <section className="how-section container">
-          <div className="how-card"><div className="how-number">01</div><div><span className="eyebrow">VOCÊ COLA O ENDEREÇO</span><h3>Sem conectar a carteira.</h3><p>O filtro começa em modo somente leitura e não pede assinatura, senha ou permissão.</p></div></div>
-          <div className="how-card"><div className="how-number">02</div><div><span className="eyebrow">A GENTE ORGANIZA OS SINAIS</span><h3>Dados difíceis viram contexto.</h3><p>Idade, código, aprovações e movimentações aparecem lado a lado, com evidência.</p></div></div>
-          <div className="how-card"><div className="how-number">03</div><div><span className="eyebrow">VOCÊ DECIDE COM MAIS CLAREZA</span><h3>Uma próxima ação simples.</h3><p>Prossiga, revise ou evite. O RiskGuard não decide por você — ele mostra o que importa.</p></div></div>
+          <div className="how-card"><div className="how-number">01</div><div><span className="eyebrow">YOU PASTE THE ADDRESS</span><h3>No wallet connection needed.</h3><p>The filter starts in read-only mode and never asks for a signature, password, or permission.</p></div></div>
+          <div className="how-card"><div className="how-number">02</div><div><span className="eyebrow">WE ORGANIZE THE SIGNALS</span><h3>Complex data becomes context.</h3><p>Age, code, approvals, and activity appear side by side with evidence.</p></div></div>
+          <div className="how-card"><div className="how-number">03</div><div><span className="eyebrow">YOU DECIDE WITH MORE CLARITY</span><h3>One clear next action.</h3><p>Proceed, review, or avoid. RiskGuard does not decide for you — it shows what matters.</p></div></div>
         </section>
       </main>
 
-      <footer className="footer container"><div className="brand footer-brand"><span className="brand-mark"><span></span><span></span><span></span></span><span className="brand-name">riskguard</span></div><span>Filtro de segurança pré-transação · construído para Pharos</span><span className="footer-right">v0.1 demo <ExternalLink size={13} /></span></footer>
+      <footer className="footer container"><div className="brand footer-brand"><span className="brand-mark"><span></span><span></span><span></span></span><span className="brand-name">riskguard</span></div><span>Pre-transaction safety filter · built for Pharos</span><span className="footer-right">v0.1 demo <ExternalLink size={13} /></span></footer>
     </div>
   );
 }

@@ -1,25 +1,25 @@
-# RiskGuard — entregas
+# RiskGuard — delivery criteria
 
-## Verificador pré-transação com consulta e exemplos
+## Pre-transaction scanner and examples
 
-- [x] Deve existir um campo para informar uma carteira ou contrato e iniciar a verificação pré-transação.
-- [x] Deve ser possível usar um exemplo local de demonstração com perfil limpo e resultado de baixo risco.
-- [x] Deve ser possível usar um exemplo local de demonstração com sinais problemáticos e resultado de risco elevado.
-- [x] A interface deve indicar que os dados atuais são demonstração local, sem apresentar simulação como consulta on-chain real.
+- [x] Provide a wallet or contract input and start a read-only pre-transaction scan.
+- [x] Provide a local clean demo with a low-risk result.
+- [x] Provide a local problematic demo with a high-risk result.
+- [x] Clearly label current data as demo mode without presenting the simulation as a live on-chain query.
 
-## Sinais, classificação e explicações
+## Signals, classification, and explanations
 
-- [x] A análise deve consolidar pelo menos cinco sinais: idade da carteira ou contrato, verificação do código, interações com endereços sinalizados, padrões incomuns de aprovação e movimentação recente de fundos.
-- [x] O resultado deve apresentar nível de risco baixo, médio ou alto, com justificativas encontradas.
-- [x] Cada bandeira deve ser explicada em linguagem simples, sem depender de jargão técnico.
+- [x] Consolidate five signals: address or contract age, verified code, flagged-address interactions, unusual approval patterns, and recent fund activity.
+- [x] Present low, medium, or high risk with the evidence behind the result.
+- [x] Explain every flag in plain language without relying on unnecessary jargon.
 
-## Recomendação adicional e relatório
+## Recommendation and shareable report
 
-- [x] O resultado deve incluir recomendação prática de ação: prosseguir, revisar com cautela ou evitar a interação.
-- [x] Deve existir uma opção adicional para gerar um relatório compartilhável com resumo da análise, nível de risco, evidências e recomendação.
-- [x] O relatório compartilhável deve fornecer feedback visível quando o conteúdo for copiado.
+- [x] Include an actionable recommendation: proceed, review carefully, or avoid the interaction.
+- [x] Include an extra option to copy a shareable report with the summary, risk level, evidence, and recommendation.
+- [x] Show visible feedback when the report is copied.
 
-## Interface e demonstração
+## Interface and demo
 
-- [x] A interface deve ser clara, confiável, responsiva e pronta para demonstração em português do Brasil.
-- [x] Deve existir um mini vídeo de apresentação mostrando o fluxo principal e os resultados do produto.
+- [x] Keep the interface clear, trustworthy, responsive, and ready for an English-language demo.
+- [x] Provide a short presentation video showing the main flow and results.
